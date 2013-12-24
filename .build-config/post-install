@@ -1,3 +1,9 @@
 #!/bin/bash
 
-ln -s -r ${3}/usr/${C_LIBDIRS}/clang ${3}/usr/lib/clang
+if [ ! -d ${3}/usr/lib/ ];then
+  mkdir -p ${3}/usr/lib/
+fi;
+
+if [ ! -d ${3}/usr/lib/clang ];then
+  ln -s -r ${3}/usr/${C_LIBDIRS}/clang ${3}/usr/lib/clang
+fi;
